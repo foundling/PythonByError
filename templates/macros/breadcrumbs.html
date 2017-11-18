@@ -1,7 +1,23 @@
 {% macro breadcrumbs(names) -%}
-    <a class="fa fa-home" href="/"></a>
+<div class="breadcrumbs">
+
+    {% if request.path == '/' %} 
+    <a class="active breadcrumb fa fa-home" href="/"></a>
+    {% else %}
+    <a class="breadcrumb fa fa-home" href="/"></a>
+    {% endif %}
+
     {% for name in names %} 
-    <i class="fa fa-chevron-right"></i>
-    <a href="/chapters/{{name|slugify}}">{{name}}</a>
+
+        <i class="fa fa-chevron-right"></i>
+
+        {% if name | slugify == request.path | basename %}
+        <a class="breadcrumb active" href="/chapters/{{name|slugify}}">{{name}}</a>
+        {% else %}
+        <a class="breadcrumb inactive" href="/chapters/{{name|slugify}}">{{name}}</a>
+        {% endif %}
+
     {% endfor %}
+
+</div>
 {%- endmacro %}

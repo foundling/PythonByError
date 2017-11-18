@@ -10,6 +10,7 @@
         {% block nav %}{% endblock %}
         {% block body %}{% endblock %}
         <footer>© Copyright 2017 by Alex Ramsdell.</footer>
-        <script type="text/javascript" src="{{url_for('static', filename='js/carousel.js')}}"></script>
+        {% block scripts %}{% endblock %}
+        <script type="text/javascript" src="{{ url_for('static', filename='js/keynav.js') }}"></script>
     </body>
 </html>

@@ -19,6 +19,14 @@ a {
     color: black;
 }
 
+div.breadcrumbs > a.active {
+    color: black;
+}
+
+div.breadcrumbs > a.inactive {
+    color: lightgray;
+}
+
 section > * {
     text-align: center;
 }

@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% from 'macros/breadcrumbs.html' import breadcrumbs %}
+
+{% block body %}
+{{ breadcrumbs(chapter_names) }}
+<section class="toc">
+    <h2>Table of Contents</h2>
+    <ul>
+        {% for chapter in chapters %}
+        <li>
+            <a href="/chapters/{{ chapter.name | slugify }}">{{chapter.name}}</a>
+        </li>
+        {% endfor %}
+    </ul>
+</section>
+{% endblock %}

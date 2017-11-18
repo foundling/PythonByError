@@ -11,30 +11,28 @@ Markdown(app)
 
 python_book = book.Book(os.path.join(app.root_path, 'content','chapters'))
 chapter_names = python_book.chapter_list()
+chapters = python_book.chapters
 
 @app.template_filter('slugify')
 def slugify_filter(s):
     return slugify(s)
 
+@app.template_filter('basename')
+def basename_filter(path):
+    return os.path.basename(path)
+
 def unslugify(s):
     return s.replace('-',' ').title()
 
-def next_prev_urls(name):
-    chapter = python_book.get_chapter(name = unslugify(name))
-    prev_chapter = python_book.get_prev_chapter(chapter)
-    prev_url = slugify(prev_chapter.name) if prev_chapter else None
-    next_chapter = python_book.get_next_chapter(chapter)
-    next_url = slugify(next_chapter.name) if next_chapter else None
-    return next_url, prev_url
-
 @app.route('/')
 def index():
-    chapters = python_book.chapters
-    chapter = chapters[0]
-    return render_template('home.html', chapters=chapters, chapter=chapter, chapter_names=chapter_names)
+    return render_template('home.html', chapters=chapters, chapter=chapters[0], chapter_names=chapter_names)
+
+@app.route('/chapters/toc')
+def toc():
+    return render_template('toc.html', chapters=chapters, chapter_names=chapter_names)
 
 @app.route('/chapters/<name>')
 def chapter(name):
-    print(unslugify(name))
     chapter = python_book.get_chapter(name = unslugify(name))
     return render_template('page.html', chapter=chapter, chapter_names=chapter_names)

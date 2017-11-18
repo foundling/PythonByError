@@ -18,14 +18,12 @@
 
 {{ breadcrumbs(chapter_names) }}
 
-<section class="toc">
-    <h2>Table of Contents</h2>
-    <ul>
-        {% for chapter in chapters %}
-                <li>
-                    <a href="/chapters/{{ chapter.name | slugify }}">{{chapter.name}}</a>
-                </li>
-        {% endfor %}
-    </ul>
+<section class="about">
+    <p></p>
 </section>
+{% endblock %}
+
+
+{% block scripts %}
+<script type="text/javascript" src="{{url_for('static',filename='js/carousel.js')}}"></script>
 {% endblock %}
