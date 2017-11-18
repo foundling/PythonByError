@@ -1,0 +1,7 @@
+{% macro breadcrumbs(names) -%}
+    <a class="fa fa-home" href="/"></a>
+    {% for name in names %} 
+    <i class="fa fa-chevron-right"></i>
+    <a href="/chapters/{{name|slugify}}">{{name}}</a>
+    {% endfor %}
+{%- endmacro %}

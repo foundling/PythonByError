@@ -1,0 +1,69 @@
+.tango .hll { background-color: #ffffcc }
+.tango  { background: #f8f8f8; }
+.tango .c { color: #408080; font-style: italic } /* Comment */
+.tango .err { border: 1px solid #FF0000 } /* Error */
+.tango .k { color: #008000; font-weight: bold } /* Keyword */
+.tango .o { color: #666666 } /* Operator */
+.tango .ch { color: #408080; font-style: italic } /* Comment.Hashbang */
+.tango .cm { color: #408080; font-style: italic } /* Comment.Multiline */
+.tango .cp { color: #BC7A00 } /* Comment.Preproc */
+.tango .cpf { color: #408080; font-style: italic } /* Comment.PreprocFile */
+.tango .c1 { color: #408080; font-style: italic } /* Comment.Single */
+.tango .cs { color: #408080; font-style: italic } /* Comment.Special */
+.tango .gd { color: #A00000 } /* Generic.Deleted */
+.tango .ge { font-style: italic } /* Generic.Emph */
+.tango .gr { color: #FF0000 } /* Generic.Error */
+.tango .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+.tango .gi { color: #00A000 } /* Generic.Inserted */
+.tango .go { color: #888888 } /* Generic.Output */
+.tango .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+.tango .gs { font-weight: bold } /* Generic.Strong */
+.tango .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+.tango .gt { color: #0044DD } /* Generic.Traceback */
+.tango .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+.tango .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+.tango .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+.tango .kp { color: #008000 } /* Keyword.Pseudo */
+.tango .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+.tango .kt { color: #B00040 } /* Keyword.Type */
+.tango .m { color: #666666 } /* Literal.Number */
+.tango .s { color: #BA2121 } /* Literal.String */
+.tango .na { color: #7D9029 } /* Name.Attribute */
+.tango .nb { color: #008000 } /* Name.Builtin */
+.tango .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+.tango .no { color: #880000 } /* Name.Constant */
+.tango .nd { color: #AA22FF } /* Name.Decorator */
+.tango .ni { color: #999999; font-weight: bold } /* Name.Entity */
+.tango .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
+.tango .nf { color: #0000FF } /* Name.Function */
+.tango .nl { color: #A0A000 } /* Name.Label */
+.tango .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+.tango .nt { color: #008000; font-weight: bold } /* Name.Tag */
+.tango .nv { color: #19177C } /* Name.Variable */
+.tango .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+.tango .w { color: #bbbbbb } /* Text.Whitespace */
+.tango .mb { color: #666666 } /* Literal.Number.Bin */
+.tango .mf { color: #666666 } /* Literal.Number.Float */
+.tango .mh { color: #666666 } /* Literal.Number.Hex */
+.tango .mi { color: #666666 } /* Literal.Number.Integer */
+.tango .mo { color: #666666 } /* Literal.Number.Oct */
+.tango .sa { color: #BA2121 } /* Literal.String.Affix */
+.tango .sb { color: #BA2121 } /* Literal.String.Backtick */
+.tango .sc { color: #BA2121 } /* Literal.String.Char */
+.tango .dl { color: #BA2121 } /* Literal.String.Delimiter */
+.tango .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+.tango .s2 { color: #BA2121 } /* Literal.String.Double */
+.tango .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
+.tango .sh { color: #BA2121 } /* Literal.String.Heredoc */
+.tango .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
+.tango .sx { color: #008000 } /* Literal.String.Other */
+.tango .sr { color: #BB6688 } /* Literal.String.Regex */
+.tango .s1 { color: #BA2121 } /* Literal.String.Single */
+.tango .ss { color: #19177C } /* Literal.String.Symbol */
+.tango .bp { color: #008000 } /* Name.Builtin.Pseudo */
+.tango .fm { color: #0000FF } /* Name.Function.Magic */
+.tango .vc { color: #19177C } /* Name.Variable.Class */
+.tango .vg { color: #19177C } /* Name.Variable.Global */
+.tango .vi { color: #19177C } /* Name.Variable.Instance */
+.tango .vm { color: #19177C } /* Name.Variable.Magic */
+.tango .il { color: #666666 } /* Literal.Number.Integer.Long */

@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% from 'macros/breadcrumbs.html' import breadcrumbs %}
+
+{% block body %}
+<section id="carousel">
+    <div class="carousel-container active">
+        <img src="{{url_for('static',filename='img/fun1.png') }}" />
+    </div>
+    <div class="carousel-container">
+        <img src="{{url_for('static',filename='img/fun2.png') }}" />
+    </div>
+    <div class="carousel-container">
+        <img src="{{url_for('static',filename='img/fun3.png') }}" />
+    </div>
+</section>
+
+<h1 class="title">Learn Python!</h1>
+
+{{ breadcrumbs(chapter_names) }}
+
+<section class="toc">
+    <h2>Table of Contents</h2>
+    <ul>
+        {% for chapter in chapters %}
+                <li>
+                    <a href="/chapters/{{ chapter.name | slugify }}">{{chapter.name}}</a>
+                </li>
+        {% endfor %}
+    </ul>
+</section>
+{% endblock %}

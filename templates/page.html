@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% from 'macros/breadcrumbs.html' import breadcrumbs %}
+
+{% block nav %}
+{{ breadcrumbs(chapter_names) }}
+{% endblock %}
+
+{% block body %}
+<h1>{{ chapter.chapter_name }}</h1>
+<p>{{ chapter.tutorial | markdown }}</p>
+<p>{{ chapter.exercises | markdown }}</p>
+{% endblock %}
