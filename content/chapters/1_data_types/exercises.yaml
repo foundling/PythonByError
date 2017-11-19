@@ -1,11 +1,11 @@
 exercises:
     Name Error:
         instructions: Change the line causing the bug, enter it in the submit button, and click the check mark to check your answer.
-        code: |
+        code: >
             name = Robert
-            # NameError: name 'robert' is not defined
+                # NameError: name 'robert' is not defined
         answers: 
-            - "Robert"
+            - name = "Robert"
         hints:
             - "Did you use double quotes?"
             - "Remember, a program name and a literal word are not the same. How do we differentiate between them?"
@@ -13,8 +13,8 @@ exercises:
         instructions: Change the line causing the bug, enter it in the submit button, and click the check mark to check your answer.
         code: |
             age = 34
-            if age = 34:
-                print("guessed it!")
-            # SyntaxError: invalid syntax
+                if age = 34:
+                    print("guessed it!")
+                # SyntaxError: invalid syntax
         answers: 
             - "if age == 34"

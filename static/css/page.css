@@ -1,9 +1,11 @@
+.toc,
 section.page {
     padding: 5%;
     width: 75%;
     margin: 0 auto;
 }
 
+.toc *,
 section.page * {
     text-align: left;
 }

@@ -27,7 +27,7 @@ class Book():
     def __init__(self, path):
 
         self.path = abspath(path)
-        self.chapters = self._find_chapters(self.path)
+        self.chapters = self._build_chapters(self.path)
 
     def chapter_list(self):
         return [chapter.name for chapter in self.chapters]
@@ -44,7 +44,7 @@ class Book():
 
         return None
 
-    def _find_chapters(self, path):
+    def _build_chapters(self, path):
         chapters = [
             Chapter(
                 name='Toc',
