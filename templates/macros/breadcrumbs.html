@@ -2,14 +2,14 @@
 <div class="breadcrumbs">
 
     {% if request.path == '/' %} 
-    <a class="active breadcrumb fa fa-home" href="/"></a>
+        <a class="active breadcrumb fa fa-home" href="/"></a>
     {% else %}
-    <a class="breadcrumb fa fa-home" href="/"></a>
+        <a class="inactive breadcrumb fa fa-home" href="/"></a>
     {% endif %}
 
     {% for name in names %} 
 
-        <i class="right-arrow fa fa-chevron-right"></i>
+        <i class="right-arrow fa fa-caret-right"></i>
 
         {% if name | slugify == request.path | basename %}
         <a class="breadcrumb active" href="/chapters/{{name|slugify}}">{{name}}</a>

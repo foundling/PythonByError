@@ -4,8 +4,6 @@ html {
 }
 
 html, body {
-    width: 100%;
-    height: 100%;
     margin: 0;
     padding: 0;
 }
@@ -14,17 +12,18 @@ html, body, * {
     box-sizing: border-box;
 }
 
-body {
-    background: yellow;
-}
 a {
     text-decoration: none;
     color: black;
 }
 
-ul {
-    margin: 0;
-    padding: 0;
+.mission a:not(.enter-book) {
+    transition: ease 0.2s background;
+    padding: 2px;
+    border-bottom: 2px solid lightgray;
+}
+.mission a:not(.enter-book):hover {
+    background: #ff9d9d;
 }
 
 div.breadcrumbs > a.active {
@@ -57,16 +56,21 @@ header.title {
 
 header.title > ul.links {
     width: 100%;
-    positon: absolute;
-    top: 0;
-    left: 0;
-    display: inline-block;
+    padding: 0;
+    text-align: left;
 }
 header.title > ul.links > li.link {
     text-align: left;
+    padding: 20px;
+    display: inline-block;
+}
+header.title > ul.links > li.link > a {
+    font-size: 4em;
 }
 
-.title {
+.book-title {
+    margin-top: 80px;
+    margin-bottom: 80px;
 }
 
 #carousel {
@@ -82,15 +86,40 @@ header.title > ul.links > li.link {
     display: block;
     text-decoration: underline;
 }
-a.twitter {
-}
 
-section.about {
+section.mission {
     width: 50%;
     margin: 0 auto;
     line-height: 1.5em;
-}
-a.enter-book {
-    width: 100%;
     text-align: center;
 }
+section.mission > * {
+    text-align: left;
+}
+a.enter-book {
+    background: lightgray;
+    padding: 40px;
+    border-radius: 50%;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 4em;
+}
+
+.breadcrumbs {
+    overflow-x: scroll;
+    max-width: 100%;
+    background: white;
+    padding: 20px;
+    height: auto;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+.breadcrumbs > a {
+    padding-right: 20px;
+}
+.breadcrumbs > .right-arrow {
+    padding-right: 20px;
+}
+
