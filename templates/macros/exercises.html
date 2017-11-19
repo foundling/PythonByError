@@ -1,0 +1,14 @@
+{% macro exercises(problems) -%}
+<h1>Chapter {{chapter_number}} Exercises</h1>
+
+{% for title in problems %}
+    <h2>{{loop.index}} - {{ title }}</h2>
+    <h3>{{problems[title]['instructions']}}</h3>
+    <pre><code>{{ problems[title]['code'] }}</code></pre>
+    <input class="answer-input" type="text" />
+    <i class="validate-answer fa fa-check"></i>
+    <span class="answers hidden">{{ problems[title]['answers'] | tojson }}</span>
+
+{% endfor %}
+
+{%- endmacro %}

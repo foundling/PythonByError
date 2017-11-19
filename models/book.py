@@ -1,5 +1,6 @@
 import os
 import json
+import yaml
 from slugify import slugify 
 
 basename = os.path.basename
@@ -73,9 +74,9 @@ class Book():
             chapter_children = child[2]
             name = basename(chapter_path)[2:].replace('_',' ').title()
             tutorial = [f for f in chapter_children if f == 'content.md']
-            exercises = [f for f in chapter_children if f == 'exercises.md']
+            exercises = [f for f in chapter_children if f == 'exercises.yaml']
             tutorial_content = open(os.path.join(chapter_path, tutorial[0])).read() if tutorial else ''
-            exercises_content = open(os.path.join(chapter_path, exercises[0])).read() if exercises else ''
+            exercises_content = yaml.load(open(os.path.join(chapter_path, exercises[0]))) if exercises else ''
             chapter = Chapter(
                 name = name, 
                 chapter_number = index,

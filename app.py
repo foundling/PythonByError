@@ -39,8 +39,8 @@ def chapter(name):
 
 
 files = ['/data/osu/290/project/content/chapters/./0_intro/content.md'
-'/data/osu/290/project/content/chapters/./0_intro/exercises.md',
+'/data/osu/290/project/content/chapters/./0_intro/exercises.yaml',
 '/data/osu/290/project/content/chapters/./1_data_types/content.md',
-'/data/osu/290/project/content/chapters/./1_data_types/exercises.md']
+'/data/osu/290/project/content/chapters/./1_data_types/exercises.yaml']
 
 app.run(debug=True, host='0.0.0.0', extra_files = files)

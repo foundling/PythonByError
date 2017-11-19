@@ -1,0 +1,16 @@
+{% macro exercises(problems) -%}
+<h1>Chapter {{chapter_number}} Exercises</h1>
+
+{% for title in problems.items() %}
+    <h2>{{ title }}</h2>
+{% endfor %}
+{#
+    <h2>{{ problem.instructions }}</h2>
+    <pre><code>{{ problem.code }}</code></pre>
+    <input class="answer-input" type="text" />
+    <i class="validate-answer fa fa-check"></i>
+    <span class="answers hidden">{{ problem.answers }}</span>
+{% endfor %}
+#}
+
+{%- endmacro %}

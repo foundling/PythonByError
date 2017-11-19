@@ -1,4 +1,10 @@
 const isAnswerBox = (el) => el.classList.contains('answer-box');
+const inputBoxes = document.querySelectorAll('.answer-input');
+const answerButtons = document.querySelectorAll('i.verify-answer');
+const answers = document.querySelectorAll('span.answers');
+
+const answerElements = zip(inputBoxes, answerButtons, answers);
+
 
 function getAnswer() {
 }
@@ -10,6 +16,7 @@ function validateAnswer() {
 }
 
 function dispatchEvent(e) {
+    console.log(e.target);
     //if ( isAnswerBox(e.target) )
 }
 
@@ -29,4 +36,4 @@ function zip(...args) {
     return zipped;
 }
 
-document.addEventListener('click', dispatchEvent);
+document.getElementById('exercises').addEventListener('click', dispatchEvent);

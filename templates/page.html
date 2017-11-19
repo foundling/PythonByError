@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% from 'macros/breadcrumbs.html' import breadcrumbs %}
+{% from 'macros/exercises.html' import exercises %}
 
 {% block nav %}
 {{ breadcrumbs(chapter_names) }}
@@ -8,7 +9,7 @@
 {% block body %}
 <h1>{{ chapter.chapter_name }}</h1>
 <p>{{ chapter.tutorial | markdown }}</p>
-<div id="exercises">{{ chapter.exercises | markdown }}</div>
+<div id="exercises">{{  exercises(chapter.exercises['exercises']) }}</div>
 {% endblock %}
 
 {% block scripts %}

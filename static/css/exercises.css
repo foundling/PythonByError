@@ -4,7 +4,6 @@
 
 .verify-answer:hover {
     color: green;
-
 }
 
 input.answer-correct {
@@ -23,7 +22,7 @@ input.answer-unvalidated {
     display: none;
 }
 
-.answer-box {
+.answer-input {
 }
 
 #exercises {
