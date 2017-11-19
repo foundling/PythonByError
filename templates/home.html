@@ -2,6 +2,7 @@
 {% from 'macros/breadcrumbs.html' import breadcrumbs %}
 
 {% block body %}
+
 <section id="carousel">
     <div class="carousel-container active">
         <img src="{{url_for('static',filename='img/fun1.png') }}" />
@@ -14,13 +15,20 @@
     </div>
 </section>
 
-<h1 class="title">Learn Python!</h1>
 
-{{ breadcrumbs(chapter_names) }}
+<header class="title">
+    <ul class="links">
+        <a class="link twitter fa fa-twitter" href="https://twitter.com/PythonByError"></a>
+    <ul>
+    <h1 class="title">Python By Error</h1>
+<header>
+
 
 <section class="about">
-    <p></p>
+    <p>Python by Error is a web textbook that takes an error-first approach to teaching python.  Python was my first langauge, and when I started learning it, errors freaked me out. The truth is, it took a long time before I started reading them. How much time did I lose! How much fun did I not have?!?!? We're going to start off by dealing intimately with error messages so we can learn how to think in python and become fearless in the process.  Follow me down the stack trace!</p>
+    <a href="/toc" class="enter-book fa fa-road"></a>
 </section>
+
 {% endblock %}
 
 

@@ -14,9 +14,17 @@ html, body, * {
     box-sizing: border-box;
 }
 
+body {
+    background: yellow;
+}
 a {
     text-decoration: none;
     color: black;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
 }
 
 div.breadcrumbs > a.active {
@@ -41,12 +49,29 @@ header,
     text-align: center;
 }
 
+header.title {
+    width: 100%;
+    text-align: center;
+    position: relative;
+}
+
+header.title > ul.links {
+    width: 100%;
+    positon: absolute;
+    top: 0;
+    left: 0;
+    display: inline-block;
+}
+header.title > ul.links > li.link {
+    text-align: left;
+}
+
 .title {
-    font-size: 7em; 
 }
 
 #carousel {
     background: white;
+    padding: 75px 50px;
 }
 
 .carousel-container {
@@ -57,5 +82,15 @@ header,
     display: block;
     text-decoration: underline;
 }
+a.twitter {
+}
 
-
+section.about {
+    width: 50%;
+    margin: 0 auto;
+    line-height: 1.5em;
+}
+a.enter-book {
+    width: 100%;
+    text-align: center;
+}
