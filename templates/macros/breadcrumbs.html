@@ -9,7 +9,7 @@
 
     {% for name in names %} 
 
-        <i class="fa fa-chevron-right"></i>
+        <i class="right-arrow fa fa-chevron-right"></i>
 
         {% if name | slugify == request.path | basename %}
         <a class="breadcrumb active" href="/chapters/{{name|slugify}}">{{name}}</a>

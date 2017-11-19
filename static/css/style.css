@@ -27,6 +27,10 @@ div.breadcrumbs > a.inactive {
     color: lightgray;
 }
 
+.right-arrow {
+    color: lightgray;
+}
+
 section > * {
     text-align: center;
 }
@@ -51,4 +55,7 @@ header,
 
 .carousel-container.active {
     display: block;
+    text-decoration: underline;
 }
+
+
