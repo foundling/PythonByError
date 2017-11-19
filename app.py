@@ -36,3 +36,11 @@ def toc():
 def chapter(name):
     chapter = python_book.get_chapter(name = unslugify(name))
     return render_template('page.html', chapter=chapter, chapter_names=chapter_names)
+
+
+files = ['/data/osu/290/project/content/chapters/./0_intro/content.md'
+'/data/osu/290/project/content/chapters/./0_intro/exercises.md',
+'/data/osu/290/project/content/chapters/./1_data_types/content.md',
+'/data/osu/290/project/content/chapters/./1_data_types/exercises.md']
+
+app.run(debug=True, host='0.0.0.0', extra_files = files)

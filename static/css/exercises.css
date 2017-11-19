@@ -1,0 +1,30 @@
+.verify-answer {
+    color: lightgray;
+}
+
+.verify-answer:hover {
+    color: green;
+
+}
+
+input.answer-correct {
+    border: 3px solid lightgreen;
+}
+
+input.answer-incorrect {
+    border: 3px solid orange;
+}
+
+input.answer-unvalidated {
+    border: 3px solid lightgray;
+}
+
+.answers {
+    display: none;
+}
+
+.answer-box {
+}
+
+#exercises {
+}

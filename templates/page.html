@@ -8,5 +8,9 @@
 {% block body %}
 <h1>{{ chapter.chapter_name }}</h1>
 <p>{{ chapter.tutorial | markdown }}</p>
-<p>{{ chapter.exercises | markdown }}</p>
+<div id="exercises">{{ chapter.exercises | markdown }}</div>
+{% endblock %}
+
+{% block scripts %}
+<script type="text/javascript" src="{{url_for('static', filename='js/exercises.js')}}"></script>
 {% endblock %}
