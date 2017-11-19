@@ -78,11 +78,21 @@ header.title > ul.links > li.link > a {
     padding: 75px 50px;
 }
 
+#carousel > img {
+    width: 60%;
+}
+
 .carousel-container {
+    width: 70%;
+    margin: 0 auto;
     display: none;
 }
 
+.carousel-container > img {
+    width: 100%;
+}
 .carousel-container.active {
+
     display: block;
     text-decoration: underline;
 }

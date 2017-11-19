@@ -7,10 +7,12 @@
 {% endblock %}
 
 {% block body %}
-<h1>{{ chapter.chapter_name }}</h1>
-<p>{{ chapter.tutorial | markdown }}</p>
-{% if chapter.exercises %}
-<div id="exercises">{{  exercises(chapter.exercises['exercises']) }}</div>
+<section class="page">
+    <h1>{{ chapter.chapter_name }}</h1>
+    <p>{{ chapter.tutorial | markdown }}</p>
+    {% if chapter.exercises %}
+    <div id="exercises">{{  exercises(chapter.exercises['exercises']) }}</div>
+</section>
 {% endif %}
 {% endblock %}
 

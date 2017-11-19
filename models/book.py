@@ -17,13 +17,10 @@ class Chapter():
         self.tutorial = tutorial
         self.exercises = exercises
         self.chapter_number = chapter_number
-        self.prev = None
-        self.next = None
         url_segment = slugify(self.name)
 
     def __repr__(self):
-        return 'name: {}, number: {} prev: {}, next: {}: '.format(
-                self.name, self.chapter_number, self.prev.name if self.prev else None, self.next.name if self.next else None)
+        return 'name: {}, number: {}: '.format(self.name, self.chapter_number)
 
 class Book():
 
@@ -31,7 +28,6 @@ class Book():
 
         self.path = abspath(path)
         self.chapters = self._find_chapters(self.path)
-        self.chapters = self._link_chapters(self.chapters)
 
     def chapter_list(self):
         return [chapter.name for chapter in self.chapters]
@@ -40,7 +36,6 @@ class Book():
 
         if name:
             for chapter in self.chapters:
-                print(name, chapter.name)
                 if chapter.name == name:
                     return chapter
 
@@ -49,15 +44,6 @@ class Book():
 
         return None
 
-    def _link_chapters(self, chapters):
-        prev = None
-        for chapter in chapters:
-            if prev:
-                prev.next = chapter
-                chapter.prev = prev
-            prev = chapter
-        return chapters
-            
     def _find_chapters(self, path):
         chapters = [
             Chapter(

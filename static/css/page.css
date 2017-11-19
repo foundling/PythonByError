@@ -1,4 +1,15 @@
+section.page {
+    padding: 5%;
+    width: 75%;
+    margin: 0 auto;
+}
+
+section.page * {
+    text-align: left;
+}
+
 pre {
     max-width: 100%;
     overflow-x: scroll;
 }
+
