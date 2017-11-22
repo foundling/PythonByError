@@ -27,3 +27,11 @@ input.answer-unvalidated {
 
 #exercises {
 }
+
+.validate-answer.correct {
+    color: limegreen;
+}
+
+.validate-answer.incorrect {
+    color: red;
+}

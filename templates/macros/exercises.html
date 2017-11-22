@@ -3,14 +3,14 @@
 
 {% for title in problems %}
 <div class="exercise">
-<h2>{{ loop.index }} - {{ title }}</h2>
-<h3>{{ problems[title]['instructions'] }}</h3>
-<pre>
-    <code>{{ problems[title]['code'] }}</code>
-</pre>
-<input class="answer-input" type="text" />
-<i id="{{loop.index - 1}}" class="validate-answer fa fa-check"></i>
-<span class="answers hidden">{{ problems[title]['answers'] | tojson }}</span>
+    <h2>{{ loop.index }} - {{ title }}</h2>
+    <h3>{{ problems[title]['instructions'] }}</h3>
+    <pre>
+        <code>{{ problems[title]['code'] }}</code>
+    </pre>
+    <input class="answer-input" type="text" />
+    <button id="{{loop.index - 1}}" class="validate-answer fa fa-check"></button>
+    <span class="answers hidden">{{ problems[title]['answers'] | tojson }}</span>
 </div>
 {% endfor %}
 

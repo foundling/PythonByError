@@ -3,7 +3,6 @@ const inputs = document.querySelectorAll('.answer-input');
 const validateButtons = document.querySelectorAll('.validate-answer');
 const answers = document.querySelectorAll('.answers');
 
-
 // NOTE: add notification box here to give user feedback when they they answer
 if (exercisesContainer) {
     exerciseComponents = zip(inputs, validateButtons, answers);
@@ -19,10 +18,33 @@ if (exercisesContainer) {
             input = exerciseComponents[el.id][0].value;     
             answer = getAnswer(exerciseComponents[el.id][2]);
             isValid = validateAnswer(input, answer);
-            console.log(input, answer, isValid);
+            if(isValid) {
+                markCorrect(el);
+            } else {
+                markIncorrect(el)
+            }
+
         }
 
     });
+}
+
+function markIncorrect(el) {
+
+    if (el.classList.contains('correct'))
+        el.classList.remove('correct');
+
+    if (!el.classList.contains('incorrect'))
+        el.classList.add('incorrect');
+
+}
+
+function markCorrect(el) {
+    if (el.classList.contains('incorrect'))
+        el.classList.remove('incorrect');
+
+    if (!el.classList.contains('correct'))
+        el.classList.add('correct');
 }
 
 function updateProgress() {
