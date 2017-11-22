@@ -1,21 +1,25 @@
-The following are some common data types that we will be working with in this book. I've separated them into two categories: items that are indivisible and items that are aggregations of other items in some form or another.
+We will work with the following data types in this book. We can divide them into two categories: simple data types and complex data types (although none of them are in fact 'simple').
 
-+ Simple Data Types
-    + Numeric
-        + int
-        + float
-        + long
-    + Logical
-        + bool
+## Simple Data Types
 
-+ Aggregate Data Types
-+ Text
++ Numeric
+    + int
+    + float
+    + long
++ Logical
+    + bool
+
+## Complex Data Types
+
++ Sequences
     + string
-+ Collections
     + tuple
     + list
+
++ Collections
     + set
     + dict
+
 + Object Oriented Data Structures
     + class
 

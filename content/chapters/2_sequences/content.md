@@ -36,7 +36,7 @@ Say you create an iterable called `letters`:
     letters = ['a','b','c'] 
 
 
-`letters` is both a list and an iterable and this is because **lists are iterables**.    
+`letters` is both a list and an iterable and this is because **lists are iterables**.
 
 Iterating through `letters` will give you the values, `'a'`, `'b'`, `'c'`, one at a time, but how can we do this? We need to pick a control structure, which is to say we need a Python looping mechanism. What we want is something that will repeat some bit of code while some condition is true. Let's try the `for` loop.  
 
