@@ -3,7 +3,11 @@ const direction = {39: 1, 37: -1};
 let activeBreadcrumb = [].filter.call(breadcrumbs, el => el.classList.contains('active'))[0];
 let activeIndex = [].slice.call(breadcrumbs).indexOf(activeBreadcrumb);
 
+
+// BUG! make sure you're not in an input, etc. 
 function navigate(e) {
+    if (e.target.nodeName !== 'BODY')
+        return;
 
     let dir = direction[e.keyCode]; 
 

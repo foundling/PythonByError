@@ -5,6 +5,7 @@ const answers = document.querySelectorAll('.answers');
 
 // zip builds [[input, validateButton, answers] X num questions]
 // NOTE: add notification box here to give user feedback when they they answer
+/*
 exerciseComponents = zip(inputs, validateButtons, answers);
 
 
@@ -23,6 +24,7 @@ exercisesContainer.addEventListener('click', function(e) {
     }
 
 });
+*/
 
 function updateProgress() {
     // wrap this all in IIFE, pass in store, update store 
@@ -31,8 +33,13 @@ function updateProgress() {
 function notifyUser() {
 }
 
+function getGuess(input) {
+    return input.value;
+}
+
 function getAnswer(el) {
-    return JSON.parse(el.innerHTML);
+    // returns an array of answers as strings
+    return JSON.parse(el.innerHTML).map(guess => guess.trim('\n'));
 }
 
 function showAnswers() {
@@ -62,4 +69,3 @@ function zip(...args) {
 
     return zipped;
 }
-

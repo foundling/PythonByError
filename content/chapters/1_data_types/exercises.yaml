@@ -6,6 +6,7 @@ exercises:
                 # NameError: name 'robert' is not defined
         answers: 
             - name = "Robert"
+            - name = "Bob"
         hints:
             - "Did you use double quotes?"
             - "Remember, a program name and a literal word are not the same. How do we differentiate between them?"

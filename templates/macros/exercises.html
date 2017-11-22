@@ -8,7 +8,7 @@
 <pre>
     <code>{{ problems[title]['code'] }}</code>
 </pre>
-<input data-answer="{{ problems[title]['answers'] | tojson }}" id="" class="answer-input" type="text" />
+<input class="answer-input" type="text" />
 <i id="{{loop.index - 1}}" class="validate-answer fa fa-check"></i>
 <span class="answers hidden">{{ problems[title]['answers'] | tojson }}</span>
 </div>
