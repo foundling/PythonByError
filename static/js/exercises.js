@@ -3,28 +3,27 @@ const inputs = document.querySelectorAll('.answer-input');
 const validateButtons = document.querySelectorAll('.validate-answer');
 const answers = document.querySelectorAll('.answers');
 
-// zip builds [[input, validateButton, answers] X num questions]
+
 // NOTE: add notification box here to give user feedback when they they answer
-/*
-exerciseComponents = zip(inputs, validateButtons, answers);
+if (exercisesContainer) {
+    exerciseComponents = zip(inputs, validateButtons, answers);
 
+    exercisesContainer.addEventListener('click', function(e) {
 
-exercisesContainer.addEventListener('click', function(e) {
+        const el = e.target;
+        let input;
+        let answer;
+        let isValid;
 
-    const el = e.target;
-    let input;
-    let answer;
-    let isValid;
+        if (el.className.includes('validate-answer')) {
+            input = exerciseComponents[el.id][0].value;     
+            answer = getAnswer(exerciseComponents[el.id][2]);
+            isValid = validateAnswer(input, answer);
+            console.log(input, answer, isValid);
+        }
 
-    if (el.className.includes('validate-answer')) {
-        input = exerciseComponents[el.id][0].value;     
-        answer = getAnswer(exerciseComponents[el.id][2]);
-        isValid = validateAnswer(input, answer);
-        //if (isValid) 
-    }
-
-});
-*/
+    });
+}
 
 function updateProgress() {
     // wrap this all in IIFE, pass in store, update store 
@@ -45,8 +44,13 @@ function getAnswer(el) {
 function showAnswers() {
 }
 
+function singleToDouble(s) {
+    // make this more general.  won't cut it for anything with multiple quotes.
+    return s.replace("'",'"').replace("'",'"');
+}
+
 function validateAnswer(input, answer) {
-    return answer.includes(input);
+    return answer.includes(singleToDouble(input));
 }
 
 function dispatchEvent(e) {
@@ -55,6 +59,8 @@ function dispatchEvent(e) {
 }
 
 function zip(...args) {
+
+    // zip builds [[input, validateButton, answers] X num questions]
 
     if (!args.every(a => a.length))
        throw new Error('Each argument to zip should be a sequence');

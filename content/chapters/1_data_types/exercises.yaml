@@ -3,7 +3,7 @@ exercises:
         instructions: Change the line causing the bug, enter it in the submit button, and click the check mark to check your answer.
         code: >
             name = Robert
-                # NameError: name 'robert' is not defined
+                # NameError: name 'Robert' is not defined
         answers: 
             - name = "Robert"
             - name = "Bob"
