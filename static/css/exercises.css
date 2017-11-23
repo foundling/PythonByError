@@ -39,6 +39,7 @@ input.answer-unvalidated {
 #hint-modal {
     height: auto; 
     width; 300px;
+    margin: 10px 0px;
     padding: 10px;
     background: orange;
 }

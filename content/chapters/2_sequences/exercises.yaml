@@ -1,0 +1,45 @@
+exercises:
+    Six Characters or Less:
+        instructions: Go through the items in usernames and pick out the usernames that are 6 characters or less in length. Print the list and past that list into the input field.
+        code: |
+
+            usernames = [
+                'redsoxfan9000', 
+                'djcarl', 
+                'donutman', 
+                '?uestlove', 
+                'bbgun', 
+                'rjd2c3po', 
+                'videogamez', 
+                'lilly99'
+            ]
+
+        hints: 
+            - You might find the `for` loop useful here
+            - Try using some data type to hold intermediate values while you loop through the names.
+
+        answers:
+            - '["djcarl", "bbgun"]'
+
+    Even Number of Characters:
+        instructions: Do the same as you did in the previous exercise but print only the usernames that have an even number of characters.
+        code: |
+
+            usernames = [
+                'redsoxfan9000', 
+                'djcarl', 
+                'donutman', 
+                '?uestlove', 
+                'bbgun', 
+                'rjd2c3po', 
+                'videogamez', 
+                'lilly99'
+            ]
+
+        hints: 
+            - Try using some data type to hold intermediate values while you loop through the names.
+            - A number is even if it has a remainder of 0 when divided by 2.  "%" is the operator to get the remainder, e.g. "a mod b" gives you the remainder when "a" is divided by "b".  
+
+        answers:
+            - '["djcarl", "donutman", "rjd2c3po", "videogamez"]'
+

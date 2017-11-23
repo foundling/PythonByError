@@ -1,0 +1,25 @@
+exercises:
+    A Way to Explore Python:
+        instructions: Fill in the blank
+        code: |
+
+            The tool that lets you run Python one line at a time is called a ____.
+
+        answers: 
+            - REPL
+        hints:
+            - "It's a four-letter acronym"
+
+    Type of Error:
+        instructions: Fill in the blank
+        code: |
+
+            You will get a ____Error if you type a sequence characters surrounded by a space that Python doesn't know anything about.
+
+        answers:
+            - name
+            - Name
+        hints:
+            - "You were mostly likly given one of these as a child. You may still have it"
+
+    

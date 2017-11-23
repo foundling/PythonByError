@@ -3,12 +3,11 @@ exercises:
         instructions: Change the line causing the bug, enter it in the submit button, and click the check mark to check your answer.
         code: |
 
-            name = Robert
-                # NameError: name 'robert' is not defined
+                name = Robert
+                # NameError: name 'Robert' is not defined
         answers: 
             - name = "Robert"
         hints:
-            - "Did you use double quotes?"
             - "Remember, a program name and a literal word are not the same. How do we differentiate between them?"
     Comparing Data:
         instructions: Change the line causing the bug, enter it in the submit button, and click the check mark to check your answer.
@@ -19,7 +18,7 @@ exercises:
                 print("guessed it!")
             # SyntaxError: invalid syntax
         answers: 
-            - if age == 34
+            - "if age == 34:"
         hints:
             - "Did you use double quotes?"
             - "Remember, a program name and a literal word are not the same. How do we differentiate between them?"

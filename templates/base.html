@@ -13,11 +13,12 @@
         {% block nav %}{% endblock %}
         {% block body %}{% endblock %}
         <footer>© Copyright 2017 by Alex Ramsdell.</footer>
-        {% block scripts %}{% endblock %}
-        <script type="text/javascript" src="{{ url_for('static', filename='js/keynav.js') }}"></script>
         <script type="text/javascript">
             const appData = {{ app_data }};
         </script>
+        <script type="text/javascript" src="{{ url_for('static', filename='js/keynav.js') }}"></script>
         <script type="text/javascript" src="{{url_for('static',filename='js/store.js')}}"></script>
+        <script type="text/javascript" src="{{url_for('static',filename='js/app.js')}}"></script>
+        {% block scripts %}{% endblock %}
     </body>
 </html>

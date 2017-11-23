@@ -7,7 +7,7 @@
 {% endblock %}
 
 {% block body %}
-<section class="page">
+<section data-chapter-number="{{chapter.chapter_number}}" class="page">
     <h1>{{ chapter.chapter_name }}</h1>
     <p>{{ chapter.tutorial | markdown }}</p>
     {% if chapter.exercises %}

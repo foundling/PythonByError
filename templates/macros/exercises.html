@@ -2,7 +2,7 @@
 <h1>Chapter {{chapter_number}} Exercises</h1>
 
 {% for title in problems %}
-<div class="exercise">
+<div data-problem-number="{{ loop.index }}" class="exercise">
     <h2>{{ loop.index }} - {{ title }}</h2>
     <h3>{{ problems[title]['instructions'] }}</h3>
     <pre>

@@ -2,7 +2,8 @@ const exercisesContainer = document.getElementById('exercises');
 const inputs = document.querySelectorAll('.answer-input');
 const validateButtons = document.querySelectorAll('.validate-answer');
 const answers = [].map.call(document.querySelectorAll('.answers'), el => el.innerHTML);
-const hints = document.querySelectorAll('.hints');
+const hints = [].map.call(document.querySelectorAll('.hints'), el => el.innerHTML);
+const chapterNumber = document.querySelector('.page').dataset.chapterNumber;
 let hintModal = document.querySelector('#hint-modal');
 
 let exerciseComponents;
@@ -20,19 +21,27 @@ if (exercisesContainer) {
 function validationHandler(e) {
 
     const el = e.target;
-    let [ input, validateButtons, answersJSON, hints ] =  exerciseComponents[el.id];  
+    let [ input, validateButtons, answersJSON, hintsJSON ] =  exerciseComponents[el.id];  
     let answers = JSON.parse(answersJSON);
+    let hints = JSON.parse(hintsJSON);
     let exerciseContainer = input.parentNode; 
     let guess = input.value;     
     let isValid = validateGuess(guess, answers);
+    console.log(isValid, answers);
     let guessCount = parseInt(el.dataset.guessCount); 
+    let problemNumber = document.querySelector('.exercise').dataset.problemNumber;
 
-    console.log(guess, answers);
+    // putting hintModal into dom initially.
+    exerciseContainer.appendChild(hintModal);
+
     if (isValid) {
 
         markCorrect(el);
-        hideHint()
+        if (!hintModal.classList.contains('hidden')) {
+            hideHint()
+        }
         setGuessCount(el, 0);
+        updateProgress(problemNumber, chapterNumber);
 
     } else {
 
@@ -41,7 +50,7 @@ function validationHandler(e) {
 
         if (guessCount > 2) {
             // wrong parent. want container of input or answer etc.
-            showHint(exerciseContainer, 'blah blah blah');
+            showHint(exerciseContainer, hints);
         }
 
     }
@@ -62,15 +71,10 @@ function markCorrect(el) {
     if (el.classList.contains('incorrect'))
         el.classList.remove('incorrect');
 
-    if (!el.classList.contains('correct'))
+    if (!el.classList.contains('correct')) {
         el.classList.add('correct');
-}
-
-function updateProgress() {
-    // wrap this all in IIFE, pass in store, update store 
-}
-
-function notifyUser() {
+        el.parentNode.querySelector('input.answer-input').classList.add('answer-correct');
+    }
 }
 
 function getGuess(input) {
@@ -86,8 +90,11 @@ function showAnswers() {
 }
 
 function singleToDouble(s) {
-    // make this more general.  won't cut it for anything with multiple quotes.
-    return s.replace("'",'"').replace("'",'"');
+    return s.replace(/"/g, "'");
+}
+
+function singleToDouble(s) {
+    return s.replace(/'/g, '"');
 }
 
 function validateGuess(guess, answers) {
@@ -116,14 +123,20 @@ function setGuessCount(el, n) {
     el.dataset.guessCount = n;
 } 
 
-function showHint(parentEl, message) {
+function showHint(parentEl, hints) {
     // add replace modal inner with message
     // add modal to parent as child
-    hintModal.innerHTML = message;
+    const text = hints.map(hint => '<li>' + hint + '</li>');
+    hintModal.innerHTML = `<ul>${text.join('')}</ul>`;
     parentEl.appendChild(hintModal);
     hintModal.classList.remove('hidden');
 }
 
+function updateProgress(problem, chapterNumber) {
+    let progress = appStore.get('progress'); 
+    progress += 1;
+    appStore.set('progress', progress);
+}
 function hideHint() {
     hintModal.classList.remove('hidden');
     hintModal = hintModal.parentNode.removeChild(hintModal);
