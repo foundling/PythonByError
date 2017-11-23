@@ -9,8 +9,12 @@
         <code>{{ problems[title]['code'] }}</code>
     </pre>
     <input class="answer-input" type="text" />
-    <button id="{{loop.index - 1}}" class="validate-answer fa fa-check"></button>
+    <button data-guess-count="0" id="{{loop.index - 1}}" class="validate-answer fa fa-check"></button>
     <span class="answers hidden">{{ problems[title]['answers'] | tojson }}</span>
+    {% if problems[title]['hints'] %}
+    <span class="hints hidden">{{ problems[title]['hints'] | tojson }}</span>
+    {% endif %}
+    <div class="hidden" id="hint-modal"></div>
 </div>
 {% endfor %}
 

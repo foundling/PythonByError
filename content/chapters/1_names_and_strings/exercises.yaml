@@ -19,4 +19,7 @@ exercises:
                 print("guessed it!")
             # SyntaxError: invalid syntax
         answers: 
-            - "if age == 34"
+            - if age == 34
+        hints:
+            - "Did you use double quotes?"
+            - "Remember, a program name and a literal word are not the same. How do we differentiate between them?"

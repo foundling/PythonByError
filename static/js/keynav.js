@@ -6,7 +6,7 @@ let activeIndex = [].slice.call(breadcrumbs).indexOf(activeBreadcrumb);
 
 // BUG! make sure you're not in an input, etc. 
 function navigate(e) {
-    if (e.target.nodeName !== 'BODY')
+    if ( ['INPUT','TEXTAREA'].includes(e.target.nodeName) )
         return;
 
     let dir = direction[e.keyCode]; 

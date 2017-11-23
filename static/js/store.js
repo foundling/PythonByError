@@ -1,23 +1,27 @@
-if (!window.localStorage)
-    console.log('No local storage! Cannot save your progress :[ ...');
+function AppStore(APP_KEY) {
+    this.APP_KEY = APP_KEY;
+    this.store = (window.localStorage || localStorage);
+}
 
-const store = window.localStorage;
-const APP_KEY = 'python_book';
+AppStore.prototype.initStorage = function () {
 
-function initStorage() {
-    if (store[APP_KEY])
+    if (!this.store) 
+       return console.warn('No local storage! Cannot save your progress :[ ...');
+
+    if(this.store.getItem(this.APP_KEY))
         return;
 
-    store[APP_KEY] = { progress: 0 };
+    this.store[this.appKey] = { progress: 0 };
+
+};
+
+AppStore.prototype.get = function(property) {
+
+    return property == null ? JSON.stringify(this.store[this.APP_KEY]) : JSON.stringify(this.store[this.APP_KEY].getItem(property));
 }
 
-function get(propName) {
-    /* return store or store value depending on whether propName is passed in */ 
-    const data = store[APP_KEY];
-    return propName ? data[propName] : data; 
-}
-
-function set(propName, value) {
-    const data = get(); 
-    data[propName] = value;
+AppStore.prototype.set = function(property, value) {
+    const tempData = JSON.parse(this.store.getItem(property));
+    tempData[property] = value;
+    this.store.setItem(this.APP_KEY, JSON.stringify(tempData));
 }

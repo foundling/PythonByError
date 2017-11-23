@@ -1,32 +1,51 @@
 const exercisesContainer = document.getElementById('exercises');
 const inputs = document.querySelectorAll('.answer-input');
 const validateButtons = document.querySelectorAll('.validate-answer');
-const answers = document.querySelectorAll('.answers');
+const answers = [].map.call(document.querySelectorAll('.answers'), el => el.innerHTML);
+const hints = document.querySelectorAll('.hints');
+let hintModal = document.querySelector('#hint-modal');
 
-// NOTE: add notification box here to give user feedback when they they answer
+let exerciseComponents;
+
 if (exercisesContainer) {
-    exerciseComponents = zip(inputs, validateButtons, answers);
+    exerciseComponents = zip(inputs, validateButtons, answers, hints);
+    hintModal.addEventListener('click', function(e) {
+        hideHint(hintModal.parentNode);
+    });
+    validateButtons.forEach(function(button) {
+        button.addEventListener('click', validationHandler);
+    });
+}
 
-    exercisesContainer.addEventListener('click', function(e) {
+function validationHandler(e) {
 
-        const el = e.target;
-        let input;
-        let answer;
-        let isValid;
+    const el = e.target;
+    let [ input, validateButtons, answersJSON, hints ] =  exerciseComponents[el.id];  
+    let answers = JSON.parse(answersJSON);
+    let exerciseContainer = input.parentNode; 
+    let guess = input.value;     
+    let isValid = validateGuess(guess, answers);
+    let guessCount = parseInt(el.dataset.guessCount); 
 
-        if (el.className.includes('validate-answer')) {
-            input = exerciseComponents[el.id][0].value;     
-            answer = getAnswer(exerciseComponents[el.id][2]);
-            isValid = validateAnswer(input, answer);
-            if(isValid) {
-                markCorrect(el);
-            } else {
-                markIncorrect(el)
-            }
+    console.log(guess, answers);
+    if (isValid) {
 
+        markCorrect(el);
+        hideHint()
+        setGuessCount(el, 0);
+
+    } else {
+
+        markIncorrect(el);
+        el.dataset.guessCount = ++guessCount;
+
+        if (guessCount > 2) {
+            // wrong parent. want container of input or answer etc.
+            showHint(exerciseContainer, 'blah blah blah');
         }
 
-    });
+    }
+
 }
 
 function markIncorrect(el) {
@@ -71,13 +90,8 @@ function singleToDouble(s) {
     return s.replace("'",'"').replace("'",'"');
 }
 
-function validateAnswer(input, answer) {
-    return answer.includes(singleToDouble(input));
-}
-
-function dispatchEvent(e) {
-    console.log(e.target.classList);
-    //if ( isAnswerBox(e.target) )
+function validateGuess(guess, answers) {
+    return answers.includes(singleToDouble(guess));
 }
 
 function zip(...args) {
@@ -96,4 +110,21 @@ function zip(...args) {
     });
 
     return zipped;
+}
+
+function setGuessCount(el, n) {
+    el.dataset.guessCount = n;
+} 
+
+function showHint(parentEl, message) {
+    // add replace modal inner with message
+    // add modal to parent as child
+    hintModal.innerHTML = message;
+    parentEl.appendChild(hintModal);
+    hintModal.classList.remove('hidden');
+}
+
+function hideHint() {
+    hintModal.classList.remove('hidden');
+    hintModal = hintModal.parentNode.removeChild(hintModal);
 }

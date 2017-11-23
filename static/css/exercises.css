@@ -18,7 +18,7 @@ input.answer-unvalidated {
     border: 3px solid lightgray;
 }
 
-.answers.hidden {
+.hidden {
     display: none;
 }
 
@@ -34,4 +34,15 @@ input.answer-unvalidated {
 
 .validate-answer.incorrect {
     color: red;
+}
+
+#hint-modal {
+    height: auto; 
+    width; 300px;
+    padding: 10px;
+    background: orange;
+}
+#hint-modal::before {
+    content: 'HINT: ';
+    font-weight: bold;
 }
