@@ -5,7 +5,7 @@ You need two tools
 1. The Python REPL 
 2. The Python virtual machine
 
-Read this page and all of its subpages and stop, if you want, at 'Learning Python'. A big LOL to that sentence.
+Read this page and all of its subpages and stop, if you want, at 'Learning Python'.
 
 Here is how to get Python.
 
@@ -15,7 +15,6 @@ Here is how to get Python.
 
 Here are some steps I'm not going to worry about before we get started:
 
-+ Since I don't believe in 'programming music', here is a [cool list of non-distracting albums]() for you to put on in the background if you find you want that.
 + Deciding upon a text editor.
 
 # Fail First

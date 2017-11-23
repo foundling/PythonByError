@@ -8,6 +8,17 @@ let hintModal = document.querySelector('#hint-modal');
 
 let exerciseComponents;
 
+let initialAppData = {
+    progress: 0,
+    chapters: {
+        0: { problems: [false, false] },
+        1: { problems: [false, false] },
+        2: { problems: [false, false] },
+        3: { problems: [false, false] }
+    }
+}
+
+
 if (exercisesContainer) {
     exerciseComponents = zip(inputs, validateButtons, answers, hints);
     hintModal.addEventListener('click', function(e) {
@@ -17,6 +28,7 @@ if (exercisesContainer) {
         button.addEventListener('click', validationHandler);
     });
 }
+
 
 function validationHandler(e) {
 

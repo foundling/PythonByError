@@ -9,9 +9,11 @@
     <h2>Table of Contents</h2>
     <ul>
         {% for chapter in chapters %}
+        {% if loop.index0 > 0 %}
         <li>
             <a href="/chapters/{{ chapter.name | slugify }}">{{chapter.name}}</a>
         </li>
+        {% endif %}
         {% endfor %}
     </ul>
 </section>

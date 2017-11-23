@@ -1,1 +1,1 @@
-window.appStore = window.appStore || new AppStore('python-book');
+//window.appStore = window.appStore || new AppStore('python-book');

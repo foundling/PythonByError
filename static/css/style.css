@@ -30,6 +30,10 @@ div.breadcrumbs > a.active {
     color: black;
 }
 
+div.breadcrumbs > a {
+    white-space: nowrap;
+}
+
 div.breadcrumbs > a.inactive {
     color: lightgray;
 }
@@ -133,3 +137,7 @@ a.enter-book {
     padding-right: 20px;
 }
 
+footer {
+    width: 100%;
+    text-align: center;
+}
